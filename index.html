@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="user-scalable=no, initial-scale=1, width=device-width" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucen" />
+<title>Radio G!</title>
+<link rel="stylesheet" href="fonts/stylesheet.css" />
+<link rel="stylesheet" href="fonts/style.css" />
+<link rel="stylesheet" href="css/JsPlayer/screen.css" />
+<link rel="stylesheet" href="css/style.css" />
+<script type="text/javascript" src="js/jquery/111/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="js/jquery/111/jquery-ui.min.js"></script>
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="jembe.js"></script>
+<script type="text/javascript">
+	 jembe_debug();
+
+    if (typeof console == "undefined") {
+        window.console = {log: function() {}};
+    }
+</script>
+</head> 
+<body>
+
+	<div id="container">
+
+        <div class="page" id="page_direct">
+            <div id="scroller">
+                <div id="player_picture"><img src="images/photo.png" border="0" /></div>
+                <div id="jsplayer"></div>
+            </div>
+        </div>
+
+        <div class="page" id="page_podcasts">
+            <div id="scroller"><div align="center" style="margin-top:50px;"><img src="images/player/301.gif" width="64" /></div></div>
+            <div id="player_podcasts"></div>
+            <div id="date_podcasts"><a href="javascript:" onclick="Podcasts.changeDate('moins');">&#9668;</a> <span id="date_list"></span> <a href="javascript:" onclick="Podcasts.changeDate('plus');">&#9658;</a></div>
+        </div>
+
+        <div class="page" id="page_videos">
+            <div id="scroller">
+                <div align="center" style="margin-top:50px;"><img src="images/player/301.gif" width="64" /></div>
+            </div>
+        </div>
+
+        <div class="page" id="page_embed_video" style="background: black;overflow:hidden;">
+            <div id="scroller">
+            </div>
+        </div>
+
+        <div class="page" id="page_contact">
+            <div id="scroller">
+                <div style="margin-top:10px;">
+                    <div class="c_telecharger"><table><tr><td><img src="images/icone-camera.png" border="0" align="middle" /></td><td>télécharger une photo</td></tr></table></div>
+                    <div style="display: none;"><input type="file" id="telechargerphoto" value="" /></div>
+                    <table width="100%" cellpadding="5" cellspacing="0" border="0">
+                        <tr>
+                            <td align="center"><div class="icone" data-icon="&#xe070;"></div></td>
+                            <td><input type="text" id="c_nom" placeholder="Nom" class="c_input" /></td>
+                        </tr>
+                        <tr>
+                            <td align="center"><div class="icone" data-icon="&#xe040;"></div></td>
+                            <td><input type="email" id="c_mail" placeholder="E-mail" class="c_input" /></td>
+                        </tr>
+                        <tr>
+                            <td align="center"><div class="icone" data-icon="&#xe054;"></div></td>
+                            <td><input type="number" id="c_mobile" placeholder="Portable" class="c_input" /></td>
+                        </tr>
+                        <tr>
+                            <td align="center"><div class="icone" data-icon="&#xe071;"></div></td>
+                            <td><select id="c_destinataire" class="c_input"><option>Envoyé à</option></select></td>
+                        </tr>
+                        <tr>
+                            <td align="center" valign="top"><div class="icone" data-icon="&#xe06a;"></div></td>
+                            <td><textarea id="c_message" placeholder="Message" class="c_input"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td align="right"><input type="button" value="envoyer" onclick="Contact.sendForm();" class="c_input_submit" /></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="page" id="page_informations">
+            <div id="scroller">
+                <p><img src="images/visuel_g.jpg" border="0" style="float:left;width:150px;margin-right:10px;" /> L'Association Angevine pour l'Extension des Communications (A.A.E.C.) a pour principale activité la gestion et l'administration de Radio G! 101.5fm.<br> 
+Créée en 1981, dès l'avènement des radios libres, Radio G! a pour objectif de donner la parole à tous les angevins en privilégiant les moins représentés sur les ondes.<br>
+Sa zone d'émission fm s'étend jusqu'à 40 kms autour d'Angers (49) et grâce au flux streaming disponible sur ce site, Radio G! peut être écoutée dans le monde entier.<br>
+Sa grille d'émissions regroupe une cinquantaine d'émissions offrant une tribune à des représentants de communautés d'idées très diverses. Autant de programmes qui s'adressent à des publics aussi vastes que la communauté maghrébine, africaine, homosexuelle... et bien sûr un grand nombre d'émissions musicales.<br>
+Avec des adhérents et des animateurs bénévoles de tous âges et de tous horizons (plus d'une centaine), l'association peut se prévaloir d'une richesse de points de vue rare, et la radio d'une représentativité populaire aujourd'hui peu présente dans les médias.<br>
+Véritable rassemblement hétéroclite, Radio G! permet un accès aux différentes cultures qui composent la population de son territoire. En cela, et parce qu'elle donne la parole depuis près de 30 ans aux angevins, elle est un moteur de la vie associative locale.<br>
+De plus, l'A.A.E.C. renforce son implication dans de nombreux projets avec les acteurs d'actions sociales tels que les maisons de quartier, espaces jeunesse, centres socio-culturels... Dépassant ainsi ses prérogatives purement radiophoniques, Radio G! met à la disposition de ces structures, son matériel et ses moyens humains (salariés, bénévoles) dans le cadre d'ateliers radio, journalisme et création musicale.</p>
+            </div>
+        </div>
+
+        <div class="page" id="page_dedicasse">
+            <iframe id="iframe_dedicase" src="" width="100%" scrolling="yes"></iframe>
+        </div>
+
+    </div>
+
+    <div id="partage_direct">
+        <div id="box_titre_direct">
+           <table width="100%" height="80" cellpadding="0" celcspacing="0" border="0">
+               <tr>
+                   <td>
+                       <div>Radio G!</div>
+                       <div></div>
+                       <div>Direct<br /></div>
+                   </td>
+               </tr>
+           </table>
+        </div>
+    </div>
+
+    <div id="header">
+        <div class="nav">
+            <div class="onglet"><a href="javascript:" id="num_standard"><span aria-hidden="true" class="icon-phone"></span> joindre le standard</a></div>
+            <div class="onglet" id="informations"><a href="javascript:"><span aria-hidden="true" class="icon-info"></span> informations</a></div>
+        </div>
+        <div class="bottom">
+            <div class="logo"><img src="images/logo_radiog.png" /></div>
+        </div>
+    </div>
+
+    <div id="menu">
+        <a id="direct">direct</a><a id="podcasts">A la carte</a><a id="contact">contact</a>
+    </div>
+
+    <script type="text/javascript" src="js/jquery/iscroll.js"></script>
+    <script type="text/javascript" src="js/jquery/jquery.touchSwipe.min.js"></script>
+    <script type="text/javascript" src="js/frap/Flux.js"></script>
+    <script type="text/javascript" src="js/frap/Api.js"></script>
+    <script type="text/javascript" src="js/frap/Podcasts.js"></script>
+    <script type="text/javascript" src="js/frap/Player.js"></script>
+    <script type="text/javascript" src="js/frap/Direct.js"></script>
+    <script type="text/javascript" src="js/frap/Contact.js"></script>
+    <script type="text/javascript" src="js/function/Rater.js"></script>
+    <script type="text/javascript" src="js/function/init.js"></script>
+
+    <!-- JsPlayer -->
+    <script type="text/template" id="player-template">
+        <div class="jsplayer">
+            <div class="control">
+                <div class="mode"></div>
+                <div class="info"></div>
+
+                <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                    <tr>
+                        <td align="center">
+                            <div class="controller">
+                                <span id="textePlayer"></span>
+								<span id="btns_player">
+									<img class="loading" src="images/player/301.gif" border="0" />
+                                	<img class="btn_play" src="images/player/play.png" border="0"  />
+                                	<img class="btn_pause" src="images/player/pause.png" border="0" />
+                                </span>
+                                <img id="btn_reload" src="images/player/refresh.png" onclick="Player.playDirect();" border="0" style="display:none;"  />
+
+                                <img class="btn_unmute" src="images/player/volume-mute2.png" border="0" />
+                                <img class="btn_mute" src="images/player/volume-high.png" border="0" />
+
+                                <button class="btn_backward">Backward</button>
+                                <button class="btn_forward">Forward</button>
+                                <button class="btn_volume_moins">Volume -</button>
+                                <button class="btn_volume_plus">Volume +</button>
+                                <div class="volume">
+                                    <div class="bar" style="width: 0"></div>
+                                    <div class="handle" style="left: 0"></div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><div class="boxhr2"></div></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div style="padding:5px 10%;">
+                                <span class="buffering"><img src="images/player/loading_brown.gif" /></span>
+                                <span class="buffering_percent"></span>
+                                <div class="slider">
+                                    <div class="bar" style="width: 0;"></div>
+                                    <div class="handle" style="left: 0;"></div>
+                                    <div class="seektime" style="left: 0"></div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                         <td align="center" class="timer"><span class="time_now"><%= time_now %></span><span id="separateur"> / </span><span class="time_end"><%= time_end %></span></td>
+                    </tr>
+                </table>
+
+                <div class="time_start"><%= time_start %></div>
+                <div class="track_name"><%= track_name %></div>
+                <div class="time_playing"><%= time_playing %></div>
+
+            </div>
+            <div class="audio"></div>
+        </div>
+    </script>
+
+
+	<!-- JsPlayer -->
+    <script type="text/template" id="player-template2">
+        <div class="jsplayer">
+            <div class="control">
+                <div class="mode"></div>
+                <div class="info"></div>
+
+
+                 <table width="100%" cellpadding="10" cellspacing="0" border="0">
+                    <tr>
+                        <td align="center" width="60"><div><span class="time_now"><%= time_now %></span></div></td>
+                        <td>
+                            <div class="slider">
+                                <div class="bar" style="width: 0;"></div>
+                                <div class="handle" style="left: 0;"></div>
+                                <div class="seektime" style="left: 0"></div>
+                            </div>
+                        </td>
+                        <td align="center" width="60"><div><span class="time_end"><%= time_end %></span></div></td>
+                    </tr>
+                </table>
+
+                <span id="textePlayer"></span>
+                <span class="loading"><!--<img src="images/player/301.gif" border="0" />--></span>
+                <img class="btn_play" src="images/player/play.png" border="0" width="50" />
+                <img class="btn_pause" src="images/player/pause.png" border="0" width="50" />
+                <img class="btn_unmute" src="images/player/volume-mute2.png" border="0" />
+                <img class="btn_mute" src="images/player/volume-high.png" border="0" />
+                <button class="btn_backward">Backward</button>
+                <button class="btn_forward">Forward</button>
+                <button class="btn_volume_moins">Volume -</button>
+                <button class="btn_volume_plus">Volume +</button>
+                <div class="volume" style="display:none;">
+                    <div class="bar" style="width: 0"></div>
+                    <div class="handle" style="left: 0"></div>
+                </div>
+                <span class="buffering"><img src="images/player/loading_brown.gif" /></span>
+                <span class="buffering_percent"></span>
+                <div class="time_start"><%= time_start %></div>
+                <div class="track_name"><%= track_name %></div>
+                <div class="time_playing"><%= time_playing %></div>
+
+
+
+
+
+            </div>
+            <div class="audio"></div>
+        </div>
+    </script>
+
+    <script type="text/template" id="player-html-template">
+        <audio id="audio<%= id %>" src="<%= track_url %>"></audio>
+    </script>
+
+    <script type="text/template" id="player-flash-template">
+        <div id="audio_container<%= id %>">FLASH PLAYER NOT AVAILABLE</div>
+    </script>
+    <script src="js/JsPlayer/vendor/json2/json2.js"></script>
+    <!--<script src="js/JsPlayer/vendor/jquery-ui/jquery-ui-1.8.21.custom.min.js"></script>-->
+    <script src="js/JsPlayer/vendor/jquery.ui.touch-punch/jquery.ui.touch-punch.min.js"></script>
+    <script src="js/JsPlayer/vendor/underscore/underscore-min.js"></script>
+    <script src="js/JsPlayer/vendor/backbone/backbone-min.js"></script>
+    <script src="js/JsPlayer/vendor/backbone/backbone.getters.setters.js"></script>
+    <script src="js/JsPlayer/vendor/swfobject/swfobject.js"></script>
+    <script src="js/JsPlayer/vendor/mobileesp/mdetect.js"></script>
+
+    <script src="js/JsPlayer/jsplayer/util.js"></script>
+    <script src="js/JsPlayer/jsplayer/state.js"></script>
+    <script src="js/JsPlayer/jsplayer/mode.js"></script>
+    <script src="js/JsPlayer/jsplayer/model.js"></script>
+    <script src="js/JsPlayer/jsplayer/view.flash.js"></script>
+    <script src="js/JsPlayer/jsplayer/view.html.js"></script>
+    <script src="js/JsPlayer/jsplayer/view.jembe.js"></script>
+    <script src="js/JsPlayer/jsplayer/view.samsung2012.js"></script>
+    <!--<script src="js/JsPlayer/jsplayer/view.lg-netcast.js"></script>-->
+    <script src="js/JsPlayer/jsplayer/view.wp7.js"></script>
+    <script src="js/JsPlayer/jsplayer/view.js"></script>
+    <script src="js/JsPlayer/jsplayer/jsplayer.js"></script>
+
+</body>
+</html>
