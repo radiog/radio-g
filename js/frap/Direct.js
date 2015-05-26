@@ -71,7 +71,7 @@ Direct = {
     },
 
     showTitle : function() {
-        var meta = '<table width="100%" height="80" cellpadding="0" celcspacing="0" border="0"><tr><td><div>'+Direct._meta.nodes[1].node.title+'</div><div></div><div>'+Direct._meta.nodes[1].node.field_artiste+'<br />'+Direct._meta.nodes[1].node.field_image_album+'</div></td></tr></table>';
+        var meta = '<table width="100%" height="80" cellpadding="0" celcspacing="0" border="0"><tr><td><div>'+Direct._meta.nodes[1].title+'</div><div></div><div>'+Direct._meta.nodes[1].artiste+'<br />'+Direct._meta.nodes[1].cover_url+'</div></td></tr></table>';
 		console.log('title = '+meta)
 		$('#box_titre_direct').html(meta);
         $('#player_picture').html('<img src="'+Direct._meta.nodes[1].node.field_image+'" border="0" height="158">');       
