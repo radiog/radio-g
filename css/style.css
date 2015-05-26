@@ -564,7 +564,7 @@ body {
   height: 10px;
   background: #fff;
   position: relative;
-  background: url('http://radiog.lafrap.fr/sites/all/themes/radiog/images/bg.png') 0 0 repeat #5D707D;
+  background: url('images/background.png') 0 0 repeat #5D707D;
 }
 #header .bottom .logo {
   position: absolute;
@@ -572,7 +572,7 @@ body {
   left: 0;
   width: 100%;
   padding-left: 5%;
-  background: url('http://radiog.lafrap.fr/sites/all/themes/radiog/images/bg.png') 0 0 repeat #5D707D;
+  background: url('images/background.png') 0 0 repeat #5D707D;
 }
 .btn_android_footerHome {
   position: absolute;
