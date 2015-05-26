@@ -66,7 +66,6 @@ Podcasts = {
                                     '</div>'+
                                 '</td>'+
                                 '<td><span class="title">'+Podcasts._list_podcasts[i].node_title+'</span><div class="trait"></div>'+((Podcasts._list_podcasts[i].body!=null) ? Podcasts._list_podcasts[i].body : "")+'</td>'+
-                                '<td><a href="http://www.facebook.com/sharer.php?u='+escape(Podcasts._list_podcasts[i].image)+'" target="_blank" '+getOnClickEvent()+'="Podcasts.likePodcasts('+i+')" id="podcast_like_'+i+'" class="like" data-icon="&#xe0d4;"></a></td>'+
                             '</tr>'+
                             '<tr>'+
                                 '<td colspan="3"></td>'+
