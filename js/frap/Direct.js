@@ -31,6 +31,8 @@ Direct = {
 			success: function(data) 
 			{
 				Direct._meta = data;
+				console.log('Type meta title');
+				console.log(typeof(Direct._meta.current.title));
 				if(typeof(Direct._meta.current.title)=='undefined')
 				{
 					var meta2 = '<table width="100%" height="80" cellpadding="0" celcspacing="0" border="0"><tr><td><div>RADIO G</div><div></div></td></tr></table>';
