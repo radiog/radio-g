@@ -79,12 +79,17 @@ Direct = {
 		if (Direct._meta.current.cover_url == 'undefined')
 		{
 			imagePochette = 'images/photo.png';
+			console.log('imagePochette');
+			console.log(imagePochette);
+			$('#player_picture').html('<img src="'+imagePochette+'" border="0" height="158">'); 
 		}
 		else
 		{
 			imagePochette = Direct._meta.current.cover_url;
-		}
-        $('#player_picture').html('<img src="'+imagePochette+'" border="0" height="158">');       
+			console.log('imagePochette');
+			console.log(imagePochette);
+			$('#player_picture').html('<img src="'+imagePochette+'" border="0" height="158">'); 
+		}      
         //return title;
     }
 
