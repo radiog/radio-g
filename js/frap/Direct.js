@@ -31,6 +31,7 @@ Direct = {
 			success: function(data) 
 			{
 				Direct._meta = data;
+				console.log(Direct._meta);
 				if(typeof(Direct._meta.current.title)!=='undefined')
 				{
 					if(Direct._current_direct != Direct._meta.current.title) {
