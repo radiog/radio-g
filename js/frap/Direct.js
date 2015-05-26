@@ -71,10 +71,10 @@ Direct = {
     },
 
     showTitle : function() {
-        var meta = '<table width="100%" height="80" cellpadding="0" celcspacing="0" border="0"><tr><td><div>'+Direct._meta.current.title+'</div><div></div><div>'+Direct._meta.current.artiste+'<br />'+Direct._meta.current.cover_url+'</div></td></tr></table>';
+        var meta = '<table width="100%" height="80" cellpadding="0" celcspacing="0" border="0"><tr><td><div>'+Direct._meta.current.title+'</div><div></div><div>'+Direct._meta.current.artiste+'</div></td></tr></table>';
 		console.log('title = '+meta)
 		$('#box_titre_direct').html(meta);
-        $('#player_picture').html('<img src="'+Direct._meta.nodes[1].node.field_image+'" border="0" height="158">');       
+        $('#player_picture').html('<img src="'+Direct._meta.current.cover_url+'" border="0" height="158">');       
         //return title;
     }
 
