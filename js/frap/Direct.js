@@ -75,20 +75,15 @@ Direct = {
         var meta = '<table width="100%" height="80" cellpadding="0" celcspacing="0" border="0"><tr><td><div>'+Direct._meta.current.title+'</div><div></div><div>'+Direct._meta.current.artiste+'</div></td></tr></table>';
 		console.log('title = '+meta)
 		$('#box_titre_direct').html(meta);
-		var imagePochette;
 		if (Direct._meta.current.cover_url == 'undefined')
 		{
-			imagePochette = 'images/photo.png';
 			console.log('imagePochette DEFAUT');
-			console.log(imagePochette);
-			$('#player_picture').html('<img src="'+imagePochette+'" border="0" height="158">'); 
+			$('#player_picture').html('<img src="images/photo.png" border="0" height="158">'); 
 		}
 		else
 		{
-			imagePochette = Direct._meta.current.cover_url;
 			console.log('imagePochette OK');
-			console.log(imagePochette);
-			$('#player_picture').html('<img src="'+imagePochette+'" border="0" height="158">'); 
+			$('#player_picture').html('<img src="'+Direct._meta.current.cover_url+'" border="0" height="158">'); 
 		}      
         //return title;
     }
