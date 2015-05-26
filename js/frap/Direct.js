@@ -75,7 +75,7 @@ Direct = {
         var meta = '<table width="100%" height="80" cellpadding="0" celcspacing="0" border="0"><tr><td><div>'+Direct._meta.current.title+'</div><div></div><div>'+Direct._meta.current.artiste+'</div></td></tr></table>';
 		console.log('title = '+meta)
 		$('#box_titre_direct').html(meta);
-		if (Direct._meta.current.cover_url == 'undefined')
+		if(typeof(Direct._meta.current.cover_url)=='undefined')
 		{
 			console.log('imagePochette DEFAUT');
 			$('#player_picture').html('<img src="images/photo.png" border="0" height="158">'); 
