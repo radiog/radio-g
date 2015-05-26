@@ -33,6 +33,7 @@ Direct = {
 				if(Direct._current_direct != Direct._meta.current.title) {
 					Direct._current_direct = Direct._meta.current.title;
 					console.log('Show title');
+					console.log(Direct._meta);
 					Direct.showTitle();
 				}
 			},
