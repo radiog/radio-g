@@ -31,11 +31,20 @@ Direct = {
 			success: function(data) 
 			{
 				Direct._meta = data;
-				if(Direct._current_direct != Direct._meta.current.title) {
-					Direct._current_direct = Direct._meta.current.title;
-					console.log('Show title');
-					console.log(Direct._meta);
-					Direct.showTitle();
+				if(typeof(Direct._meta.current.title)=='undefined')
+				{
+					var meta2 = '<table width="100%" height="80" cellpadding="0" celcspacing="0" border="0"><tr><td><div>RADIO G</div><div></div></td></tr></table>';
+					console.log('title = '+meta2)
+					$('#box_titre_direct').html(meta2);
+				}
+				else
+				{
+					if(Direct._current_direct != Direct._meta.current.title) {
+						Direct._current_direct = Direct._meta.current.title;
+						console.log('Show title');
+						console.log(Direct._meta);
+						Direct.showTitle();
+					}
 				}
 			},
 			error: function() 
