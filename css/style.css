@@ -567,7 +567,8 @@ body {
   height: 110px;
   background: #fff;
   position: relative;
-  background: url('images/background.png') 0 0 repeat #5D707D;
+  /*background: url('images/background.png') 0 0 repeat #5D707D;*/
+  background: #5D707D;
 }
 #header .bottom .logo {
   position: absolute;
@@ -575,7 +576,8 @@ body {
   left: 0;
   width: 100%;
   padding-left: 30%;
-  background: url('images/background.png') 0 0 repeat #5D707D;
+  /*background: url('images/background.png') 0 0 repeat #5D707D;*/
+  background: #5D707D;
 }
 .btn_android_footerHome {
   position: absolute;
