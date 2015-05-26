@@ -17,8 +17,9 @@ Direct = {
 	init : function() {
 		this._url_direct = Flux._frap_flux.ws_meta_direct;
 		Direct.refreshData();
-		if (Direct._intervalle) clearInterval(Direct._intervalle);
-		Direct._intervalle = setInterval(Direct.refreshData,5000);
+		//if (Direct._intervalle) clearInterval(Direct._intervalle);
+		//Direct._intervalle = setInterval(Direct.refreshData,5000);
+		setInterval(Direct.refreshData,5000);
 	},
 
 	refreshData : function() {
