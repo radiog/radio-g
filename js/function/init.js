@@ -113,10 +113,10 @@ $(document).ready(function () {
     $('#header #informations').on(getClickEvent(), function() {
         Api.switchMenu('informations');
     });
-    $('#page_contact .c_telecharger').on(getClickEvent(), function() {
-        $('#telechargerphoto').trigger('click');
-    });
+	$('#page_contact .c_telecharger').on(getClickEvent(), function() {
+        Contact.select_options();
 
+    });
     $('#box_partage_direct .btn').on(getClickEvent(), function() {
         Direct.menuToggle();
     });
