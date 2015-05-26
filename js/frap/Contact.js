@@ -70,29 +70,43 @@ Contact = {
         }
     },
 
-    sendForm : function() {
-        var nom=$('#c_nom').val();
-        var mail=$('#c_mail').val();
-        var mobile=$('#c_mobile').val();
-        var destinataire=$('#c_destinataire').val();
-        var message=$('#c_message').val();
+	sendForm: function () {
+        var nom = $('#c_nom').val();
+        var mail = $('#c_mail').val();
+        var mobile = $('#c_mobile').val();
+        var destinataire = $('#c_destinataire').val();
+        var message = $('#c_message').val();
+        var image = $('#telechargerphoto').val();
 
-        if(mail!='' && nom!='' && message!='') {
-            $.ajax({
-                type: "POST",
+        if (nom != '' && message != '') {
+            $('#loader_contact').fadeIn();
+	        console.log("image: " + image);
+            jembe.http.post({
                 url: Flux._frap_flux.url_contact,
-                data: 'from='+Flux._frap_flux.email_contact+'&nom='+nom+'&mail='+mail+'&mobile='+mobile+'&destinataire='+destinataire+'&message='+message,
-                success:function(data){
-                    alert('Nous avons bien pris en compte votre demande.');
-                    $('#c_nom').val('');
-                    $('#c_mail').val('');
-                    $('#c_mobile').val('');
-                    $('#c_message').val('');
-                }
+                data: 'from=' + Flux._frap_flux.email_contact+'&nom='+nom+'&mail='+mail+'&mobile='+mobile+'&destinataire='+destinataire+'&message='+message,
+                upload: image,
+                onSuccess: Contact.callback_sendForm,
+                onError: Contact.callback_error
             });
         } else {
-            alert('Les champs NOM, E-MAIL et MESSAGE sont obligatoire.')
+            alert('Les champs NOM et MESSAGE sont obligatoires.')
         }
+    },
+
+    callback_sendForm: function(data) {
+        $('#loader_contact').fadeOut();
+        alert('Nous avons bien reçu votre message.');
+        $('#c_nom').val('');
+        $('#c_mail').val('');
+        $('#c_mobile').val('');
+        $('#c_message').val('');
+        $('#icon-camera').attr('src','images/icone-camera.png');
+        $('#telechargerphoto').val('');
+        this.reset_photo();
+    },
+
+    callback_error: function(msg) {
+        console.log('Contact.callback_error = '+msg);
     }
 
 }
