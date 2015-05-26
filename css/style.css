@@ -524,7 +524,7 @@ body {
 #header {
   position: fixed;
   left: 0;
-  top: -220px;
+  top: 220px;
   width: 100%;
   z-index: 998;
 }
@@ -571,7 +571,7 @@ body {
   top: 10px;
   left: 0;
   width: 100%;
-  padding-left: 5%;
+  padding-left: 30%;
   background: url('images/background.png') 0 0 repeat #5D707D;
 }
 .btn_android_footerHome {
