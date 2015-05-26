@@ -84,7 +84,7 @@ Direct = {
 		{
 			imagePochette = Direct._meta.current.cover_url;
 		}
-        $('#player_picture').html('<img src="'+Direct.imagePochette+'" border="0" height="158">');       
+        $('#player_picture').html('<img src="'+imagePochette+'" border="0" height="158">');       
         //return title;
     }
 
