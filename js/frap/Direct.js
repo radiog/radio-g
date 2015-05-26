@@ -76,13 +76,13 @@ Direct = {
 		console.log('title = '+meta)
 		$('#box_titre_direct').html(meta);
 		var imagePochette;
-		if (undefined != Direct._meta.current.cover_url)
+		if (Direct._meta.current.cover_url == 'undefined')
 		{
-			imagePochette = Direct._meta.current.cover_url;
+			imagePochette = 'images/photo.png';
 		}
 		else
 		{
-			imagePochette = 'images/photo.png';
+			imagePochette = Direct._meta.current.cover_url;
 		}
         $('#player_picture').html('<img src="'+Direct.imagePochette+'" border="0" height="158">');       
         //return title;
