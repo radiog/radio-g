@@ -32,7 +32,7 @@ Direct = {
 			{
 				Direct._meta = data;
 				console.log(Direct._meta);
-				if(typeof(Direct._meta.nids.current)=='null')
+				if(Direct._meta.nids.current==null)
 				{
 					var meta2 = '<table width="100%" height="80" cellpadding="0" celcspacing="0" border="0"><tr><td><div>RADIO G!</div><div>DIRECT</div></td></tr></table>';
 					console.log('title = '+meta2)
