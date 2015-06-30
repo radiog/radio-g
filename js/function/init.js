@@ -59,7 +59,8 @@ function onConfirm(button) {
     else 
     {
     	console.log('Windows close');
-        window.close();
+        //window.close();
+		return;
     }
 }
 

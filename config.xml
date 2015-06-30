@@ -1,4 +1,4 @@
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.app.radiog" version="1.0.1">
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.app.radiog" version="1.0.2">
 
 	<name>Radio G</name>
 	
@@ -38,6 +38,12 @@
 	<gap:plugin name="org.apache.cordova.vibration"/>
 	<gap:plugin name="org.apache.cordova.inappbrowser"/>
 	<gap:plugin name="org.apache.cordova.network-information"/>
+	<gap:plugin name="nl.x-services.plugins.socialsharing" source="plugins.cordova.io" />
+	<gap:plugin name="nl.kingsquare.background-audio" />
+	<!--<gap:plugin name="com.cordova.background-audio" />-->
+	<gap:config-file platform="ios" parent="UIApplicationExitsOnSuspend" overwrite="true">
+    	<false/>
+	</gap:config-file>
 	
 	<icon src="images/logos/ios/57x57.png" gap:platform="ios" width="57" height="57" />
 	<icon src="images/logos/ios/72x72.png" gap:platform="ios" width="72" height="72" />

@@ -518,8 +518,16 @@ jembe.http = {
 				error:eval(p_obj.onError)
 			});
 		}
-	}
-	
+	},
+	post : function(p_obj) {
+        $.ajax({
+            type: "POST",
+            url: p_obj.url,
+            data: p_obj.data,
+            success: eval(p_obj.onSuccess),
+            error:eval(p_obj.onError)
+        });
+    }
 }
 
 //jembe.http.get({onProgress:\'MyPodcasts._emissionsList['+this.id_podcast+']['+this.i+'].onProgress\', output:\''+this.content.url.substr(this.content.url.lastIndexOf('/')+1)+'\', url:\''+this.content.url+'\', onSuccess:MyPodcasts._emissionsList['+this.id_podcast+']['+this.i+'].onFinished});

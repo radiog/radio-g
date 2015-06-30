@@ -23,11 +23,11 @@ FrapFlux = {
 	url_like: '',
 	
 	//url_dedicace: 'http://www.lesonunique.com/datasun/selection_auditeur/selection_date_jquery.php',
-	url_contact: 'http://frap.jembe.fr/formulaire/send.php',
+	url_contact: 'send.php',
 
 	destinataires : [
 		{nom:'Administration',mail:'cecile.radiog@gmail.com'},
 		{nom:'Programmation',mail:'julien.radiog@gmail.com'},
-		{nom:'Accueil',mail:'prog.radiog@gmail.com'},
+		{nom:'Accueil',mail:'prog.radiog@gmail.com'}
 	]
 }
